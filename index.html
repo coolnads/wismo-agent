@@ -111,13 +111,28 @@
         Chat with us
     </div>
 
-    <script>
-        function openChat() {
-            alert("This is where your Agentforce Web SDK or chat widget will load.");
-            // Example placeholder:
-            // window.AgentforceChat.open();
-        }
-    </script>
+      <!-- Agent Script: Start -->
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DDT000000Xzto',
+				'test_wismo',
+				'https://lorealusa--cccai.sandbox.my.site.com/ESWtestwismo1765477465271',
+				{
+					scrt2URL: 'https://lorealusa--cccai.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://lorealusa--cccai.sandbox.my.site.com/ESWtestwismo1765477465271/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+  <!-- Agent Script: End -->
 
 </body>
 </html>
